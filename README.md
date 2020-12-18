@@ -1,4 +1,6 @@
-## Rest API Endpoint
+## Booking Room Rest Api (Refactory)
+
+### Rest API Endpoint
 
 | Name         | Endpoint                      | method |
 | ------------ | ----------------------------- | ------ |
