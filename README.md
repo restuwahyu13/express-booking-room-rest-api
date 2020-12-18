@@ -1,9 +1,5 @@
 ## Booking Room Rest Api (Refactory)
 
-### DEMO Rest API
-
-demo for this application in [here](https://rest-booking.herokuapp.com/api/v1)
-
 ### Rest API Endpoint
 
 | Name         | Endpoint                      | method |
