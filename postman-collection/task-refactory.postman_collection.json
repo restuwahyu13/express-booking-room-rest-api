@@ -1,0 +1,772 @@
+{
+	"info": {
+		"_postman_id": "b2152605-f329-425b-854d-acf468d2710f",
+		"name": "task-refactory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "rest-api",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "aldikhan13@zetmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "bukopin12",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/Rizky/Pictures/travis_1.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{task_refactory}}/users/register",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"admin@getnada.com\",\r\n    \"password\": \"admin123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{task_refactory}}/users/login",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "activation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{task_refactory}}/users/activation/ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkluSmxjM1IxZDJGb2VYVXhNMEI2WlhSdFlXbHNMbU52YlNJc0ltbGhkQ0k2TVRZd09ERXdNalV3TkN3aVpYaHdJam94TmpBNE1UQXlPREEwZlEuVG1YYUt5dklHZHRVVm1FeldnbFZUejhZWDVrd0wwbXZVQmk1Tk5ZWlRBYw==",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"users",
+										"activation",
+										"ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkluSmxjM1IxZDJGb2VYVXhNMEI2WlhSdFlXbHNMbU52YlNJc0ltbGhkQ0k2TVRZd09ERXdNalV3TkN3aVpYaHdJam94TmpBNE1UQXlPREEwZlEuVG1YYUt5dklHZHRVVm1FeldnbFZUejhZWDVrd0wwbXZVQmk1Tk5ZWlRBYw=="
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reset",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "forgot",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resend",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"restuwahyu13@zetmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{task_refactory}}/users/resend",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"users",
+										"resend"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "profile",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "admins",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@getnada.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "admin123",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/Rizky/Pictures/travis_8.png"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{task_refactory}}/admins",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"admins"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "results",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkltRmtiV2x1UUdkbGRHNWhaR0V1WTI5dElpd2lhV0YwSWpveE5qQTRNVE13TkRZekxDSmxlSEFpT2pFMk1EZ3lNVFk0TmpOOS5aeTVkbFN4UWhsTmcwVzVPbzQ4OEJBWmhYeHlsSTVoUnBwOENGd21DSEt3",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{task_refactory}}/admins",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"admins"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "result",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkltRmtiV2x1UUdkbGRHNWhaR0V1WTI5dElpd2lhV0YwSWpveE5qQTRNVEk1TVRjeUxDSmxlSEFpT2pFMk1EZ3lNVFUxTnpKOS5oWkZYMkVMMU4tNXFwaUgtMGtTY211WDVSOGFCQ0xfVl9ZMVV2SVQ0THhV",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{task_refactory}}/admins/1",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"admins",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkltRmtiV2x1UUdkbGRHNWhaR0V1WTI5dElpd2lhV0YwSWpveE5qQTRNVEk1TVRjeUxDSmxlSEFpT2pFMk1EZ3lNVFUxTnpKOS5oWkZYMkVMMU4tNXFwaUgtMGtTY211WDVSOGFCQ0xfVl9ZMVV2SVQ0THhV",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{task_refactory}}/admins/2",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"admins",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkltRmtiV2x1UUdkbGRHNWhaR0V1WTI5dElpd2lhV0YwSWpveE5qQTRNVEk1TVRjeUxDSmxlSEFpT2pFMk1EZ3lNVFUxTnpKOS5oWkZYMkVMMU4tNXFwaUgtMGtTY211WDVSOGFCQ0xfVl9ZMVV2SVQ0THhV",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{task_refactory}}/admins/2",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"admins",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "rooms",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkluSmxjM1IxZDJGb2VYVXhNMEI2WlhSdFlXbHNMbU52YlNJc0ltbGhkQ0k2TVRZd09ERXlPVEk1TUN3aVpYaHdJam94TmpBNE1qRTFOamt3ZlEudnZWRVhOalp5elZiSGtZUklheUJFNVhCTE45NS1MUUdyazU1M0ttZmYzVQ==",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "room_name",
+											"value": "room_02A",
+											"type": "text"
+										},
+										{
+											"key": "room_capacity",
+											"value": "15",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/Rizky/Downloads/room_02A.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{task_refactory}}/rooms",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"rooms"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "results",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkluSmxjM1IxZDJGb2VYVXhNMEI2WlhSdFlXbHNMbU52YlNJc0ltbGhkQ0k2TVRZd09ERXlPVEk1TUN3aVpYaHdJam94TmpBNE1qRTFOamt3ZlEudnZWRVhOalp5elZiSGtZUklheUJFNVhCTE45NS1MUUdyazU1M0ttZmYzVQ==",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{task_refactory}}/rooms",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"rooms"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "result",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkluSmxjM1IxZDJGb2VYVXhNMEI2WlhSdFlXbHNMbU52YlNJc0ltbGhkQ0k2TVRZd09ERXlPVEk1TUN3aVpYaHdJam94TmpBNE1qRTFOamt3ZlEudnZWRVhOalp5elZiSGtZUklheUJFNVhCTE45NS1MUUdyazU1M0ttZmYzVQ==",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{task_refactory}}/rooms/1",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"rooms",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkltRmtiV2x1UUdkbGRHNWhaR0V1WTI5dElpd2lhV0YwSWpveE5qQTRNVEk1TVRjeUxDSmxlSEFpT2pFMk1EZ3lNVFUxTnpKOS5oWkZYMkVMMU4tNXFwaUgtMGtTY211WDVSOGFCQ0xfVl9ZMVV2SVQ0THhV",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{task_refactory}}/rooms/1",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"rooms",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkltRmtiV2x1UUdkbGRHNWhaR0V1WTI5dElpd2lhV0YwSWpveE5qQTRNVEk1TVRjeUxDSmxlSEFpT2pFMk1EZ3lNVFUxTnpKOS5oWkZYMkVMMU4tNXFwaUgtMGtTY211WDVSOGFCQ0xfVl9ZMVV2SVQ0THhV",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "room_name",
+											"value": "room_02A",
+											"type": "text"
+										},
+										{
+											"key": "room_capacity",
+											"value": "20",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/Rizky/Downloads/room_02A.jpeg"
+										},
+										{
+											"key": "room_status",
+											"value": "booked",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{task_refactory}}/rooms/1",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"rooms",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "booking",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkluSmxjM1IxZDJGb2VYVXhNMEI2WlhSdFlXbHNMbU52YlNJc0ltbGhkQ0k2TVRZd09ERXpNRFF3TVN3aVpYaHdJam94TmpBNE1qRTJPREF4ZlEuaVNvNDlzRjZFcmRGNVdCa2dUdkhOQVozNnkxeXZWXzBrSV9pNExMWnVUYw==",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": 1,\r\n    \"room_id\": 2,\r\n    \"total_person\": 14,\r\n    \"booking_time\": \"2020/12/17\",\r\n    \"noted\": \"diharapkan ruangan sesuai pesanan dan rapih\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{task_refactory}}/bookings",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"bookings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "results",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkltRmtiV2x1UUdkbGRHNWhaR0V1WTI5dElpd2lhV0YwSWpveE5qQTRNVE13TkRZekxDSmxlSEFpT2pFMk1EZ3lNVFk0TmpOOS5aeTVkbFN4UWhsTmcwVzVPbzQ4OEJBWmhYeHlsSTVoUnBwOENGd21DSEt3",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{task_refactory}}/bookings",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"bookings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "result",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkluSmxjM1IxZDJGb2VYVXhNMEI2WlhSdFlXbHNMbU52YlNJc0ltbGhkQ0k2TVRZd09ERXlNek0zTUN3aVpYaHdJam94TmpBNE1qQTVOemN3ZlEuSE94VmM0TkxJY29IVzdHN2UwcG9XQmozZDhENlRuVlpQVW81OTFQV0Q4RQ==",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{task_refactory}}/bookings/10",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"bookings",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{task_refactory}}/bookings/1",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"bookings",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{task_refactory}}/bookings",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"bookings"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "check",
+					"item": [
+						{
+							"name": "orderId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkluSmxjM1IxZDJGb2VYVXhNMEI2WlhSdFlXbHNMbU52YlNJc0ltbGhkQ0k2TVRZd09ERXpNRFF3TVN3aVpYaHdJam94TmpBNE1qRTJPREF4ZlEuaVNvNDlzRjZFcmRGNVdCa2dUdkhOQVozNnkxeXZWXzBrSV9pNExMWnVUYw==",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{task_refactory}}/check/order?order_id=dcb5d450-d74c-47ab-b263-6062247c3f19",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"check",
+										"order"
+									],
+									"query": [
+										{
+											"key": "order_id",
+											"value": "dcb5d450-d74c-47ab-b263-6062247c3f19"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "checkIn",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkluSmxjM1IxZDJGb2VYVXhNMEI2WlhSdFlXbHNMbU52YlNJc0ltbGhkQ0k2TVRZd09ERXpNRFF3TVN3aVpYaHdJam94TmpBNE1qRTJPREF4ZlEuaVNvNDlzRjZFcmRGNVdCa2dUdkhOQVozNnkxeXZWXzBrSV9pNExMWnVUYw==",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{task_refactory}}/check/in?order_id=dcb5d450-d74c-47ab-b263-6062247c3f19",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"check",
+										"in"
+									],
+									"query": [
+										{
+											"key": "order_id",
+											"value": "dcb5d450-d74c-47ab-b263-6062247c3f19"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "checkOut",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxiV0ZwYkNJNkluSmxjM1IxZDJGb2VYVXhNMEI2WlhSdFlXbHNMbU52YlNJc0ltbGhkQ0k2TVRZd09ERXpNRFF3TVN3aVpYaHdJam94TmpBNE1qRTJPREF4ZlEuaVNvNDlzRjZFcmRGNVdCa2dUdkhOQVozNnkxeXZWXzBrSV9pNExMWnVUYw==",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{task_refactory}}/check/out?order_id=dcb5d450-d74c-47ab-b263-6062247c3f19",
+									"host": [
+										"{{task_refactory}}"
+									],
+									"path": [
+										"check",
+										"out"
+									],
+									"query": [
+										{
+											"key": "order_id",
+											"value": "dcb5d450-d74c-47ab-b263-6062247c3f19"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
