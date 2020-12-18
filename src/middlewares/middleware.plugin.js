@@ -1,4 +1,3 @@
-require('dotenv/config')
 const zlib = require('zlib')
 const bodyParser = require('body-parser')
 const compression = require('compression')
@@ -20,6 +19,7 @@ module.exports = (app) => {
 	app.use(cors())
 	app.use(bookingTimeCronjob())
 	if (process.env.NODE_ENV !== 'production') {
-		app.use(morgan('dev'))
+		require('dotenv/config')
+	//	app.use(morgan('dev'))
 	}
 }
