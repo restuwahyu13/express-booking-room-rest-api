@@ -16,11 +16,11 @@ docker pull 705471/express-api:<tag>
 - docker-compose up -d
 - docker-compose down
 
-### Express Default Environment
+### Express Container Default Environment
 
 - PG_URI=postgres://restuwahyu13:restuwahyu13@db/booking_room
 
-### Postgres Database Default Environment
+### Postgres Container Default Environment
 
 - POSTGRES_HOST=db
 - POSTGRES_USER=restuwahyu13
