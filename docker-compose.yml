@@ -11,7 +11,7 @@ services:
       - db
     environment:
       - PG_URI=postgres://restuwahyu13:bukopin12@db/booking_room
-      - PG_HOST=host.docker.internal
+      - PG_HOST=db
       - PG_USERNAME=restuwahyu13
       - PG_PASSWORD=bukopin12
       - PG_DB=booking_room
@@ -27,7 +27,7 @@ services:
     image: postgres:latest
     environment:
       - POSTGRES_USER=restuwahyu13
-      - POSTGRES_PASSWORD=bukopin12
+      - POSTGRES_PASSWORD=restuwahyu13
       - POSTGRES_DB=booking_room
     ports:
       - 5432:5432
