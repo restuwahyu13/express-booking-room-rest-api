@@ -32,12 +32,12 @@ docker pull 705471/express-api:<tag>
 - goto [Clever Cloud](https://www.clever-cloud.com) create your cloud database
 - docker build -t restuwahyu13/express-api .
 - heroku container:login
-- heroku create {website-name}
-- docker tag restuwahyu13/express-api registry.heroku.com/{heroku-website-name}/web
+- heroku create **{website-name}**
+- docker tag restuwahyu13/express-api registry.heroku.com/**{heroku-website-name}**/web
 - docker push {heroku-website-name}
-- heroku container:release web -a {heroku-website-name}
-- heroku open -a {heroku-website-name}
-- heroku logs -a {heroku-website-name} --tail
+- heroku container:release web -a **{heroku-website-name}**
+- heroku open -a **{heroku-website-name}**
+- heroku logs -a **{heroku-website-name}** --tail
 
 ### Rest API Endpoint
 
