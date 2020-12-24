@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  # Nodejs Application Config Teritory
+  web:
+    container_name: express-app
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - db
+    environment:
+      - PG_URI=postgres://restuwahyu13:bukopin12@db/booking_room
+      - PG_HOST=host.docker.internal
+      - PG_USERNAME=restuwahyu13
+      - PG_PASSWORD=bukopin12
+      - PG_DB=booking_room
+      - NODE_ENV=production
+      - JWT_SECRET=afe68abd2396915b8bfce47b63501d
+      - SG_SECRET=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
+      - SERVER_URL=http://localhost:3000
+    ports:
+      - 3000:3000
+  # Postgres Database Config Teritory
+  db:
+    container_name: postgres-db
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=restuwahyu13
+      - POSTGRES_PASSWORD=bukopin12
+      - POSTGRES_DB=booking_room
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+volumes:
+  postgres-data:

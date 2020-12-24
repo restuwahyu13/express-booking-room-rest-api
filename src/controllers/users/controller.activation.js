@@ -7,7 +7,7 @@ exports.activationAccount = async (req, res) => {
 		const users = await knex('users').where({ email: decoded.email }).select('*')
 		const activationSuccess = await knex('users').where({ user_id: users[0].user_id }).update({ active: true })
 
-		if (activationSuccess == true) {
+		if (activationSuccess == false) {
 			return res.status(400).json({
 				status: res.statusCode,
 				method: req.method,

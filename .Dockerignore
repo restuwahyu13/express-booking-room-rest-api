@@ -1,0 +1,9 @@
+.git
+node_modules
+.env
+.eslintignore
+.eslintrc
+.gitignore
+.prettierrc
+README.md
+postman-collection/
