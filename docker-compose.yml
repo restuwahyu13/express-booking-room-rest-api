@@ -3,6 +3,7 @@ services:
   # Nodejs Application Config Teritory
   web:
     container_name: express-app
+    restart: on-failure
     build: .
     volumes:
       - .:/app
@@ -25,6 +26,7 @@ services:
   db:
     container_name: postgres-db
     image: postgres:latest
+    restart: always
     environment:
       - POSTGRES_USER=restuwahyu13
       - POSTGRES_PASSWORD=restuwahyu13
@@ -32,6 +34,6 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - db:/var/lib/postgresql/data
 volumes:
-  postgres-data:
+  db:

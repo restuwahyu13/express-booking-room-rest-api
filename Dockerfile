@@ -1,25 +1,21 @@
-# install latest node version
-FROM node:14.15.3-alpine
-
-# create and set current working directory
-RUN mkdir -p /app
+# BUILD STAGE ONE
+FROM node:14-alpine AS build
 WORKDIR /app
-
-# copy package.json to current working directory
-COPY package*.json ./
-
-# install all package && install knex global
-RUN npm install --production \
+COPY package*.json .
+RUN npm ci --prod \
   && npm i -g knex
+COPY . .
 
-# copy all file to current working directory
-COPY . ./
+#BUILD STAGE TWO
+FROM build As lintfix
+WORKDIR /app
+COPY --from=build /app .
+RUN npm run lint:fix
 
-# expose container port
-EXPOSE 3000
-
-# change permission
+#BUILD STAGE THREE
+FROM mhart/alpine-node:12
+WORKDIR /app
+COPY --from=lintfix /app .
 RUN chmod 777 ./scripts/start.sh
-
-# execute command
+EXPOSE 3000
 CMD ./scripts/start.sh
