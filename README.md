@@ -20,7 +20,7 @@ docker pull 705471/express-api:<tag>
 
 - PG_URI=postgres://restuwahyu13:restuwahyu13@db/booking_room
 
-### PG Database Default Environment
+### Postgres Database Default Environment
 
 - POSTGRES_HOST=db
 - POSTGRES_USER=restuwahyu13
