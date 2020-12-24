@@ -8,8 +8,8 @@ docker pull 705471/express-api:<tag>
 
 ### Docker Container
 
-- express-app on 3000:3000
-- postgres-db on 5432:5432
+- **express-app** on 3000:3000
+- **postgres-db** on 5432:5432
 
 ### Docker Command
 
