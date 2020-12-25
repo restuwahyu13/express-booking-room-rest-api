@@ -1,0 +1,32 @@
+# BUILD STAGE ONE
+FROM node:10-alpine AS build
+WORKDIR /app
+COPY package*.json \
+  .eslintrc \
+  .eslintignore \
+  .prettierrc  ./
+RUN npm install \
+  && npm i -g knex
+COPY . ./
+
+#BUILD STAGE TWO
+FROM build As lintfix
+WORKDIR /app
+COPY --from=build /app ./
+RUN npm run lint:fix
+
+#BUILD STAGE THREE
+FROM mhart/alpine-node:10
+WORKDIR /app
+ENV PG_HOST="db" \
+  PG_USERNAME="restuwahyu13" \
+  PG_PASSWORD="restuwahyu13" \
+  PG_DB="booking_room" \
+  NODE_ENV="development" \
+  JWT_SECRET="afe68abd2396915b8bfce47b63501d" \
+  SG_SECRET="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" \
+  SERVER_URL="http://localhost:3000"
+COPY --from=lintfix /app ./
+RUN chmod 777 ./scripts/start-dev.sh
+EXPOSE 3000
+CMD ./scripts/start-dev.sh

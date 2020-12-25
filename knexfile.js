@@ -3,7 +3,12 @@ const { resolve } = require('path')
 module.exports = {
 	development: {
 		client: 'pg',
-		connection: process.env.PG_URI,
+		connection: {
+			host: process.env.PG_HOST,
+			user: process.env.PG_USERNAME,
+			password: process.env.PG_PASSWORD,
+			database: process.env.PG_DB
+		},
 		migrations: {
 			directory: resolve(process.cwd(), 'src/databases/migrations')
 		},
@@ -20,7 +25,6 @@ module.exports = {
 		connection: process.env.PG_URI,
 		compress: true,
 		pool: { min: 1, max: 10 },
-		compress: true,
 		migrations: {
 			directory: resolve(process.cwd(), 'src/databases/migrations')
 		}

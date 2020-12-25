@@ -4,19 +4,20 @@ services:
   web:
     container_name: express-app
     restart: on-failure
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     volumes:
       - .:/app
       - /app/node_modules
     depends_on:
       - db
     environment:
-      - PG_URI=postgres://restuwahyu13:bukopin12@db/booking_room
-      - PG_HOST=db
-      - PG_USERNAME=restuwahyu13
-      - PG_PASSWORD=bukopin12
-      - PG_DB=booking_room
-      - NODE_ENV=production
+      - PG_HOST="db"
+      - PG_USERNAME="restuwahyu13"
+      - PG_PASSWORD="restuwahyu13"
+      - PG_DB="booking_room"
+      - NODE_ENV=development
       - JWT_SECRET=afe68abd2396915b8bfce47b63501d
       - SG_SECRET=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
       - SERVER_URL=http://localhost:3000
@@ -25,7 +26,7 @@ services:
   # Postgres Database Config Teritory
   db:
     container_name: postgres-db
-    image: postgres:latest
+    image: postgres:13.1-alpine
     restart: always
     environment:
       - POSTGRES_USER=restuwahyu13
@@ -35,5 +36,9 @@ services:
       - 5432:5432
     volumes:
       - db:/var/lib/postgresql/data
+    networks:
+      - net
 volumes:
   db:
+networks:
+  net:

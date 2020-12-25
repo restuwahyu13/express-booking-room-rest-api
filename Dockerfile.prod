@@ -1,0 +1,16 @@
+# BUILD STAGE ONE
+FROM node:14-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --prod \
+  && npm i -g knex
+COPY . ./
+
+#BUILD STAGE TWO
+FROM mhart/alpine-node:14
+WORKDIR /app
+ENV NODE_ENV="production"
+COPY --from=build /app ./
+RUN chmod 777 ./scripts/start-prod.sh
+EXPOSE 3000
+CMD ./scripts/start-prod.sh
