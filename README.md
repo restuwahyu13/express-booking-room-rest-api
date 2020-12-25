@@ -13,12 +13,35 @@ docker pull 705471/express-api:<tag>
 
 ### Docker Command
 
-- docker-compose up -d
-- docker-compose down
+- ## Mac/Linux Command
+
+  - ```sh
+      docker-compose -f docker-compose.prod.yml up -d || docker-compose -f docker-compose.dev.yml up -d
+    ```
+
+  - ```sh
+      docker-compose -f docker-compose.prod.yml down -d || docker-compose -f docker-compose.dev.yml down -d
+    ```
+
+- #### Windows Command
+
+  - ```sh
+       npm run cmd
+    ```
 
 ### Express Container Default Environment
 
-- PG_URI=postgres://restuwahyu13:restuwahyu13@db/booking_room
+- ### Production
+
+  - PG_URI=postgres://restuwahyu13:restuwahyu13@db/booking_room
+
+- ### Development
+
+  - PG_HOST = db
+  - PG_USERNAME = restuwahyu13
+  - PG_PASSWORD = restuwahyu13
+  - PG_DATABASE = booking_room
+  - PG_PORT = 5432
 
 ### Postgres Container Default Environment
 
@@ -70,3 +93,7 @@ docker pull 705471/express-api:<tag>
 | Check Order  | /api/v1/check/order?=order_id | GET    |
 | Check In     | /api/v1/check/in?=order_id    | GET    |
 | Check Out    | /api/v1/check/out?=order_id   | GET    |
+
+### Demo Application
+
+express booking room rest api demo application [here](https://rest-booking.herokuapp.com/)
