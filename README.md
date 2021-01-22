@@ -1,4 +1,4 @@
-## Booking Room Rest Api (Refactory)
+## Booking Room Rest Api
 
 ### Docker Image Registry
 
